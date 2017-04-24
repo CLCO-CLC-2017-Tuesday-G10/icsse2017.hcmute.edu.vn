@@ -44,14 +44,15 @@ public class FileUploadController {
         this.fileSearchService = fileSearchService;
     }
     
-    @RequestMapping("/")
-    public String listUploadedFiles(Model model) throws IOException
-    {
-    
-        return "jsp/home";
-    	//return "thymeleaf/uploadForm";
-        
+    @RequestMapping(value = { "/" }, method = RequestMethod.GET)
+    public String index(Model model){
+    	webInfo index= webService.findById(6);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
+    	model.addAttribute("index",index);
+		return "tags/index";    	
     }
+
   //mapping page edit
     @RequestMapping("/edit")
     public String admin(Model model) throws IOException
