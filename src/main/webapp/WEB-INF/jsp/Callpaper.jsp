@@ -137,17 +137,17 @@
                    
                     <div class="articleContent">
                         <span style="font-size: 14px;"><br />
-	 ${callpaper.content}
+	 						${callpaper.content}
 
 
-<li class="rmItem rmLast">
-													<a href="<c:url value="/edit-webpage-${callpaper.page_id}"/>">
-													<span
-														class="rmText">Edit</span>
-													</a>
-												</li>
-
-</ul>
+	<li class="rmItem rmLast">
+														<a href="<c:url value="/edit-webpage-${callpaper.page_id}"/>">
+														<span
+															class="rmText">Edit</span>
+														</a>
+													</li>
+	
+	</ul>
 	
 	</jsp:body>
 </t:templetepage>

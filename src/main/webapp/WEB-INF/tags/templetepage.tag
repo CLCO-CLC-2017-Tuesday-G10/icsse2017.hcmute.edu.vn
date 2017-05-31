@@ -477,25 +477,30 @@
 
 				<tr valign="top">
 
-					<td><div id="pnCenter">
-							<div id="pnCenterDisplay" style="width: 692px; float: left">
-
-								<jsp:doBody />
-
-							</div>
-
-
-						</div></td>
-
+					<td>
+						<div id="pnCenter">
+								<div id="pnCenterDisplay" style="width: 692px; float: left">
+	
+									<jsp:doBody />
+									
+								</div>
+	
+	
+						</div>
 					</td>
 					<td>
-						${sidebar.content} 
-					</td>
+						${sidebar.content }					
+					</td>	
+					
+					
 				</tr>
 				<!-- end of header -->
 				<!-- body -->
 
+		
 
+			
+					
 
 				<!-- end of body -->
 				<!-- footer -->
