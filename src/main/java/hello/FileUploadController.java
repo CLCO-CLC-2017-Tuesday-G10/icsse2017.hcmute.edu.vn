@@ -50,7 +50,7 @@ public class FileUploadController {
     	webInfo sidebar= webService.findById(8);
     	model.addAttribute("sidebar",sidebar);
     	model.addAttribute("index",index);
-		return "tags/index";    	
+		return "jsp/index";    	
     }
 
   //mapping page edit
@@ -68,6 +68,8 @@ public class FileUploadController {
     public String callpaper(Model model){
     
     	webInfo callpaper=webService.findById(1);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
     	model.addAttribute("callpaper",callpaper);
 		return "jsp/Callpaper";
     }
@@ -75,6 +77,8 @@ public class FileUploadController {
     @RequestMapping(value = { "/submission" }, method = RequestMethod.GET)
     public String submission(Model model){
     	webInfo submission=webService.findById(2);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
     	model.addAttribute("submission",submission);
 		return "jsp/Submission";
     	
@@ -86,6 +90,8 @@ public class FileUploadController {
     {
     	
     	webInfo registration=webService.findById(3);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
     	model.addAttribute("registration",registration);
 		return "jsp/Registation";	
     }
@@ -93,6 +99,8 @@ public class FileUploadController {
     @RequestMapping(value = { "/keynotespeaker" }, method = RequestMethod.GET)
     public String keynotespeaker(Model model){
     	webInfo keynotespeaker=webService.findById(4);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
     	model.addAttribute("keynotespeaker",keynotespeaker);
 		return "jsp/Keynotespeaker";	
     }
@@ -100,39 +108,30 @@ public class FileUploadController {
     @RequestMapping(value = { "/contact" }, method = RequestMethod.GET)
     public String contact(Model model){
     	webInfo contact=webService.findById(7);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
     	model.addAttribute("contact",contact);
 		return "jsp/Contact";	
     }
     //mapping page home_page
     @RequestMapping(value = { "/home_page" }, method = RequestMethod.GET)
-    public String homepage(Model model){
-    	
-		return "jsp/Home_page";	
+    public String homepage(Model model){    	
+    	webInfo index= webService.findById(6);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
+    	model.addAttribute("index",index);
+		return "jsp/index";    	
     }
     //mapping page venuehotel
     @RequestMapping(value = { "/venuehotel" }, method = RequestMethod.GET)
     public String hotelmapping(Model model){
     	webInfo venuehotel=webService.findById(5);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
     	model.addAttribute("venuehotel",venuehotel);
 		return "jsp/Venue_Hotel";	
     }
     
-    @RequestMapping(value = { "/latestnewsFirst" }, method = RequestMethod.GET)
-    public String latestnewsFirst(Model model){
-		return "jsp/last1";	
-    }
-    
-    
-    @RequestMapping(value = { "/latestnewsSecond" }, method = RequestMethod.GET)
-    public String latestnewsSecond(Model model){
-		return "jsp/last2";	
-    }
-    
-    
-    @RequestMapping(value = { "/latestnewsThird" }, method = RequestMethod.GET)
-    public String latestnewsThird(Model model){
-		return "jsp/last3";	
-    }
     
     
 	@RequestMapping(value = { "/delete-page-{pageID}" }, method = RequestMethod.GET)
