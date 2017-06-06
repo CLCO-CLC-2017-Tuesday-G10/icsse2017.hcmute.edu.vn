@@ -3,6 +3,8 @@ package hello;
 import hello.search.FileSearchService;
 import hello.storage.StorageFileNotFoundException;
 import hello.storage.StorageService;
+import Service.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -53,13 +55,51 @@ public class FileUploadController {
 		return "jsp/index";    	
     }
 
+    @RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
+    public String admin1(Model model) 
+    {
+    	webInfo index= webService.findById(6);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
+    	model.addAttribute("index",index);
+        return "admin/admin";
+    }
+    
+    @RequestMapping(value = { "/User" }, method = RequestMethod.GET)
+    public String User(Model model) 
+    {
+    	webInfo index= webService.findById(6);
+    	webInfo sidebar= webService.findById(8);
+    	model.addAttribute("sidebar",sidebar);
+    	model.addAttribute("index",index);
+        return "User/User";
+    }
+    
+    @RequestMapping("/hello")
+    public String login21(Model model) throws IOException
+    {
+    	
+        return "jsp/hello";
+    }
+    @RequestMapping("/login")
+    public String login3(Model model) throws IOException
+    {    	
+        return "jsp/login";
+    }
+    @RequestMapping("/403")
+    public String login4(Model model) throws IOException
+    {
+    	
+        return "jsp/403";
+    }
+    
   //mapping page edit
     @RequestMapping("/edit")
     public String admin(Model model) throws IOException
     {
     	List<webInfo> webpages=webService.findAllWebPages();
     	model.addAttribute("webpages",webpages);
-        return "jsp/Ckeditor";
+        return "admin/Ckeditor";
     }
     
     

@@ -6,6 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
+<link rel="stylesheet" href="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>"/>
 <title>WELCOME TO ICSSE 2017</title>
 
 <link href="<c:url value="css/show_img.css"/>" rel="stylesheet"
@@ -324,6 +326,18 @@
 										<div class="link_trang">
 											<a href="home.jsp">http://icsse2017.hcmute.edu.vn</a>
 										</div>
+										<div style="margin-left:50px">
+										<div >
+											<i class="fa fa-user-circle"></i>
+										</div>
+											<li class="rmItem "><a
+													href="admin" class="rmLink rmRootLink"><span
+														class="rmText">Hello <c:out value="${pageContext.request.remoteUser}"></c:out></span></a></li>
+												<li class="rmItem "><a
+													href="/hello" class="rmLink rmRootLink"><span
+														class="rmText">logout</span></a></li>
+										</div>
+										
 
 									</div>
 								</div>
@@ -410,7 +424,7 @@
 									<div>
 
 										<link
-											href="<c:url value = "Portlets/MenuRad/Menu.Green.css"/>"
+											href="<c:url value = "Portlets/MenuRad/admin.css"/>"
 											rel="stylesheet" type="text/css" />
 										<div
 											id="ctl06_portlet_800886a8-ccb5-40dd-813a-2c02ac0d2e92_RadMenu"
@@ -460,10 +474,11 @@
 												<li class="rmItem "><a
 													href="contact" class="rmLink rmRootLink"><span
 														class="rmText">Contact</span></a></li>
-												<li class="rmItem "><a
-													href="login" class="rmLink rmRootLink"><span
-														class="rmText">login</span></a></li>
 												
+												
+												<li class="rmItem rmLast"><a
+													href="edit" class="rmLink rmRootLink"><span
+														class="rmText">Edit</span></a></li>
 												
 											</ul>
 										
